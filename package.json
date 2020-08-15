@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/chetin4ever/node_crash_course#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "lodash": "^4.17.20"
   }
 }

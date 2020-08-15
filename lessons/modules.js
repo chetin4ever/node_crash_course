@@ -4,7 +4,7 @@
 // //console.log(xyz.pepole); //giving undifined if module not exports
 // console.log(xyz.people);
 
-const { people, ages } = require("./people");
+const { people, ages } = require("../people");
 console.log(people, ages);
 
 // os module
