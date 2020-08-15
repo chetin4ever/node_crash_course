@@ -1,8 +1,13 @@
 const http = require("http");
 const fs = require("fs");
+const _ = require("lodash");
 const server = http.createServer((req, res) => {
-  console.log(req.url);
-  console.log(req.method);
+  //lodash
+  num = _.random(0, 20);
+  console.log(num);
+
+  //console.log(req.url);
+  //console.log(req.method);
   //console.log(res);
   // set header content type
   //res.setHeader("Content-Type", "text/palin");
