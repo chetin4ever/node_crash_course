@@ -1,0 +1,31 @@
+<html lang="en">
+  <%- include("partials/header.ejs") %>
+  <body>
+    <nav>
+      <div class="site-title">
+        <a href="/">
+          <h1>Blog Ninja</h1>
+        </a>
+        <p>A Net Ninja Site</p>
+      </div>
+      <ul>
+        <li><a href="/">Blogs</a></li>
+        <li><a href="/blogs/create">New Blogs</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+    <div class="create-blog content">
+      <form>
+        <label for="title">Blog title:</label>
+        <input type="text" id="title " required />
+        <label for="snippet">Blog snipeet:</label>
+        <input type="text" id="snipeet " required />
+        <label for="body">Blog Body:</label>
+        <textarea id="body" cols="30" rows="10"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <%- include("./partials/footer.ejs")%>
+  </body>
+  </body>
+</html>
