@@ -1,12 +1,17 @@
 const express = require("express");
+const morgan = require("morgan");
 
 // app
 const app = express();
 
-//listing for request
-app.listen(3000);
 // register view engine
 app.set("view engine", "ejs");
+//listing for request
+app.listen(3000);
+
+//middleware & static file
+app.use(express.static("public"));
+app.use(morgan("dev"));
 //home page
 app.get("/", (req, res) => {
   // res.send("<p>home page</p>");
