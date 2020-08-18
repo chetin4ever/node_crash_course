@@ -9,7 +9,7 @@ const app = express();
 //connect to mongoDb
 
 const dbURI =
-  "mongodb+srv://chetin4ever:chetin@1988@nodetuts.fzzyy.mongodb.net/node-tuts?retryWrites=true&w=majority";
+  "mongodb+srv://chetin4ever:chetan@213@nodetuts.fzzyy.mongodb.net/node-tuts?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => app.listen(3000))
