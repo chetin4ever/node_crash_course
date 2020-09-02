@@ -132,3 +132,15 @@ textarea {
     font-size: 1.2em;
     cursor: pointer;
 }
+
+p.noblog {
+
+    text-align: center;
+    font-size: 20px;
+    margin-left: auto;
+
+}
+
+p.noblog:hover {
+    color: crimson;
+}

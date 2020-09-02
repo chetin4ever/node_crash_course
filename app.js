@@ -1,15 +1,17 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const blog = require("./models/blogs");
-const Blog = require("./models/blogs");
+const blogRoutes = require("./routes/blogRoutes");
 
 // app
 const app = express();
+
 //connect to mongoDb
 
+// const dbURI =
+//   "mongodb+srv://chetin4ever:chetin@1988@nodetuts.fzzyy.mongodb.net/node-tuts?retryWrites=true&w=majority";
 const dbURI =
-  "mongodb+srv://chetin4ever:chetan@123@nodetuts.fzzyy.mongodb.net/node-tuts?retryWrites=true&w=majority";
+  "mongodb+srv://chetan:chetan@123@node-tuts.hka47.mongodb.net/node-tuts?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => app.listen(3000))
@@ -21,25 +23,15 @@ app.set("view engine", "ejs");
 
 //middleware & static file
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
 //home page
 app.get("/", (req, res) => {
   res.redirect("/blogs");
 });
-app.get("/blogs", (req, res) => {
-  Blog.find()
-    .sort({ createdAt: -1 })
-    .then((result) => {
-      res.render("index", { title: "All blogs", blogs: result });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-//create blog
-app.get("/blogs/create", (req, res) => {
-  res.render("createBlog", { title: "Create-Blog" });
-});
+
+// blog route
+app.use("/blogs", blogRoutes);
 // about page
 app.get("/about", (req, res) => {
   //res.sendFile("./views/about.html", { root: __dirname });

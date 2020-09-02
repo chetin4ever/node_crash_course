@@ -9,7 +9,7 @@ const app = express();
 //connect to mongoDb
 
 const dbURI =
-  "mongodb+srv://chetin4ever:chetin@1988@nodetuts.fzzyy.mongodb.net/node-tuts?retryWrites=true&w=majority";
+  "mongodb+srv://chetin4ever:chetan@123@nodetuts.fzzyy.mongodb.net/node-tuts?retryWrites=true&w=majority";
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => app.listen(3000))
@@ -84,6 +84,7 @@ app.get("/", (req, res) => {
 app.get("/blogs/create", (req, res) => {
   res.render("createBlog", { title: "Create-Blog" });
 });
+blogs;
 // about page
 app.get("/about", (req, res) => {
   //res.sendFile("./views/about.html", { root: __dirname });
